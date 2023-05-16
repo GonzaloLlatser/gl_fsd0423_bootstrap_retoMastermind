@@ -6,19 +6,37 @@
 body{
     margin: 0;
     padding: 0;
-    background-color: blue;
+    height: 100%;
+    width: 100%;
+    background-image: url(/img/fondodepagina.jpg);
 }
+/* -------------------------------------------------------------------------------- */
+
 /* PAGINA INDEX */
 
 #logoinicio{
-    height: 25em; width: 25em;
+    height: 15em; width: 15em;
 }
+
 .row{
-    background-color: rgb(178, 209, 23);
-    height: 22em;
+    height: 15em;
 }
 
-#btnstar{
-    height: 5em; width: 10em;
+#btnplay, #btnabout{
+    height: 4em; width: 4em;
+    border-radius: 50%;
+    cursor: pointer; /* cursor */
+    transition-duration: 0.4s;
+    background: linear-gradient(110deg, rgb(36, 36, 35) 0%, rgba(0, 0, 0, 0.387) 22%, rgba(72, 72, 68, 0.615) 39%);
 }
 
+#btnplay:hover, #btnabout:hover {
+    box-shadow: 0 0em 3em 0 rgba(0, 0, 0, 0.464),0 1em 5em 0 rgba(0,0,0,0.19); /* sombra */
+    transform: translateY(-0.09em); /* efecto de volumen */
+    font-weight: bold;
+}
+
+.btn-link{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
