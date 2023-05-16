@@ -1,0 +1,24 @@
+* {
+    margin: 0;
+    padding: 0; 
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: blue;
+}
+/* PAGINA INDEX */
+
+#logoinicio{
+    height: 25em; width: 25em;
+}
+.row{
+    background-color: rgb(178, 209, 23);
+    height: 22em;
+}
+
+#btnstar{
+    height: 5em; width: 10em;
+}
+
