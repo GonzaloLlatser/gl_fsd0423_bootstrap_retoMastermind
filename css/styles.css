@@ -8,11 +8,24 @@ body{
     padding: 0;
     height: 100%;
     width: 100%;
-    background-image: url(/img/fondodepagina.jpg);
+    background-image: url(../img/fondodepagina.jpg);
 }
+
+/* a{
+    text-decoration: none;
+} */
+
+/* .botonpropio:active{
+    background-color: none;
+} */
+
+
 /* -------------------------------------------------------------------------------- */
 
 /* PAGINA INDEX */
+
+*{font-family: 'Smokum', cursive;
+}
 
 #logoinicio{
     height: 15em; width: 15em;
@@ -33,7 +46,8 @@ body{
 #btnplay:hover, #btnabout:hover {
     box-shadow: 0 0em 3em 0 rgba(0, 0, 0, 0.464),0 1em 5em 0 rgba(0,0,0,0.19); /* sombra */
     transform: translateY(-0.09em); /* efecto de volumen */
-    font-weight: bold;
+    /* font-weight: bold; */
+    color:white;
 }
 
 .btn-link{
