@@ -4,48 +4,42 @@
 }
 
 body{
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    width: 100%;
+    /* margin: 0; */
+    /* padding: 0; */
+    /* height: 100%; */
+    /* width: 100%; */
     background-image: url(../img/fondodepagina.jpg);
 }
-
-/* a{
-    text-decoration: none;
-} */
-
-/* .botonpropio:active{
-    background-color: none;
-} */
-
-
 /* -------------------------------------------------------------------------------- */
 
 /* PAGINA INDEX */
 
-*{font-family: 'Smokum', cursive;
+*{font-family: 'Smooch Sans', sans-serif;
 }
 
 #logoinicio{
-    height: 15em; width: 15em;
+    height: 14em; width: 14em;
 }
 
-.row{
-    height: 15em;
+.rowlogo{
+    height: 11em;
 }
 
-#btnplay, #btnabout{
+.rowopciones{
+    height: 17em;
+}
+
+.botonpropio{
     height: 5em; width: 5em;
     border-radius: 50%;
-    cursor: pointer; /* cursor */
+    cursor: pointer;
     transition-duration: 0.4s;
     background: linear-gradient(110deg, rgb(36, 36, 35) 0%, rgba(0, 0, 0, 0.387) 22%, rgba(72, 72, 68, 0.615) 39%);
 }
 
 #btnplay:hover, #btnabout:hover {
-    box-shadow: 0 0em 3em 0 rgba(0, 0, 0, 0.464),0 1em 5em 0 rgba(0,0,0,0.19); /* sombra */
-    transform: translateY(-0.09em); /* efecto de volumen */
+    box-shadow: 0 0em 3em 0 rgba(0, 0, 0, 0.464),0 1em 5em 0 rgba(0,0,0,0.19); /*sombra*/
+    transform: translateY(-0.09em); /*efecto de volumen */
     /* font-weight: bold; */
     color:white;
 }
@@ -58,4 +52,24 @@ body{
     font-size: 110%;
     font-weight: bold;
     color: rgb(205, 202, 202);
+}
+
+.nombrejuego{
+    font-size: 4em; color: aliceblue;
+}
+/* -------------------------------------------------------------------------------- */
+
+/* PAGINA ABOUT */
+
+.imglogogeneral{
+    height: 5em; width: 5em;
+    margin-top: 1em;
+}
+
+.rowlogoexpages{
+    height: 7em;
+}
+
+.nombrejuegopages{
+    font-size: 2em;
 }
