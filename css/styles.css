@@ -1,80 +1,86 @@
 * {
     margin: 0;
-    padding: 0; 
+    padding: 0;
+    font-family: 'Smooch Sans', sans-serif;
 }
 
-body{
-    /* margin: 0; */
-    /* padding: 0; */
-    /* height: 100%; */
-    /* width: 100%; */
+body {
     background-image: url(../img/fondodepagina.jpg);
 }
+
 /* -------------------------------------------------------------------------------- */
 
 /* PAGINA INDEX */
 
-*{font-family: 'Smooch Sans', sans-serif;
+#logoinicio {
+    height: 14em;
+    width: 14em;
 }
 
-#logoinicio{
-    height: 14em; width: 14em;
-}
-
-.rowlogo{
+.rowlogo {
     height: 11em;
 }
 
-.rowopciones{
+.rowopciones {
     height: 17em;
 }
 
-.botonpropio{
-    height: 5em; width: 5em;
+.botonpropio {
+    height: 5em;
+    width: 5em;
     border-radius: 50%;
     cursor: pointer;
     transition-duration: 0.4s;
     background: linear-gradient(110deg, rgb(36, 36, 35) 0%, rgba(0, 0, 0, 0.387) 22%, rgba(72, 72, 68, 0.615) 39%);
 }
 
-#btnplay:hover, #btnabout:hover {
-    box-shadow: 0 0em 3em 0 rgba(0, 0, 0, 0.464),0 1em 5em 0 rgba(0,0,0,0.19); /*sombra*/
-    transform: translateY(-0.09em); /*efecto de volumen */
-    /* font-weight: bold; */
-    color:white;
+#btnplay:hover,
+#btnabout:hover {
+    box-shadow: 0 0em 3em 0 rgba(0, 0, 0, 0.464), 0 1em 5em 0 rgba(0, 0, 0, 0.19);
+    transform: translateY(-0.09em);
+    color: white;
 }
 
-.btn-link{
+.btn-link {
     text-decoration: none;
 }
 
-.textbtn{
+.textbtn {
     font-size: 110%;
     font-weight: bold;
     color: rgb(205, 202, 202);
 }
 
-.nombrejuego{
-    font-size: 4em; color: aliceblue;
+.nombrejuego {
+    font-size: 4em;
+    color: aliceblue;
 }
+
 /* -------------------------------------------------------------------------------- */
 
 /* PAGINA ABOUT */
 
-.imglogogeneral{
-    height: 5em; width: 5em;
+.imglogogeneral {
+    height: 5em;
+    width: 5em;
     margin-top: 1em;
 }
 
-.rowlogoexpages{
+.rowlogoexpages {
     height: 7em;
 }
 
-.imglogogit{
-    height: 3em; width: 3em;
+.imglogogit {
+    height: 3em;
+    width: 3em;
 }
 
-.reglasdejuego, .datosautor{
+.reglasdejuego,
+.datosautor {
     color: aliceblue;
 
 }
+
+/* -------------------------------------------------------------------------------- */
+
+/* PAGINA NIVELES */
