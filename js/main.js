@@ -1,10 +1,28 @@
-// const primeraOpcion = ()=> {
-//     document.getElementById("row4first").style.display = "none";
-//     document.getElementById("row4second").style.display = "none";
-// }
 
 
-let principiante = document.getElementById("pepe");
-principiante.addEventListener("click",()=>{
-    alert("Hola");
-});
+// Pagina de seleecion de nivel- hacia pagina de seleccion de colores dependiendo la seleccion previa.
+
+
+//funcion de nivel: inicial y 4 colores
+const haciaColores4 = () => {
+    
+    document.getElementById("coloresPrincipiante").classList.remove("mm-ocultos");
+    window.location.href="../pages/seleccioncolores.html";
+}
+
+
+// funcion de nivel: intermedia y 5 colores
+
+// const haciaColores5 = (id) => {
+    
+//     window.location.href="../pages/seleccioncolores.html";
+//     document.getElementById("coloresIntermedio").classList.remove("mm-ocultos");
+// 
+
+//funcion de nivel: avanzado y 6 colores
+
+//-------------------------------------------------------
+
+
+
+
