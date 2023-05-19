@@ -87,6 +87,24 @@ body {
 
 /* -------------------------------------------------------------------------------- */
 
+/* PAGINA COLORES */
+
+.cajacolor{
+    height: 3.5em;
+}
+
+.rowcoloresselector{
+    display: flex;
+    gap: 1em;
+    
+}
+
+.coloresoculta{
+    display: none;
+}
+
+/* -------------------------------------------------------------------------------- */
+
 /* PAGINA JUGADOR */
 
 .imgjugador{
