@@ -11,16 +11,22 @@ const haciaColores4 = ( ) => {
 
 // funcion de nivel: intermedia y 5 colores
 
-// const haciaColores5 = (id) => {
+const haciaColores5 = () => {
     
-//     window.location.href="../pages/seleccioncolores.html";
-//     document.getElementById("coloresIntermedio").classList.remove("mm-ocultos");
-// 
+    window.location.href="../pages/seleccioncolores.html";
+}
 
-//funcion de nivel: avanzado y 6 colores
+
+// funcion de nivel: avanzado y 6 colores
+
+const haciaColores6 = () => {
+    
+    window.location.href="../pages/seleccioncolores.html";
+}
 
 //-------------------------------------------------------
 
+//FUNCION PARA SELECCIONAR COLOR1 Y ASIGNAR A BOX1
 
 
 
