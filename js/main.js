@@ -4,9 +4,7 @@
 
 
 //funcion de nivel: inicial y 4 colores
-const haciaColores4 = () => {
-    
-    document.getElementById("coloresPrincipiante").classList.remove("mm-ocultos");
+const haciaColores4 = ( ) => {
     window.location.href="../pages/seleccioncolores.html";
 }
 
