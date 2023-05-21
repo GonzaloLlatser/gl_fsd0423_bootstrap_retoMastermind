@@ -6,12 +6,10 @@
 //funcion de nivel: inicial y 4 colores
 const haciaColores4 = ( ) => {
     window.location.href="../pages/selcolorniv1.html";
- 
 }
 
 
 // funcion de nivel: intermedia y 5 colores
-
 const haciaColores5 = () => {
     
     window.location.href="../pages/selcolorniv2.html";
@@ -19,12 +17,10 @@ const haciaColores5 = () => {
 
 
 // funcion de nivel: avanzado y 6 colores
-
 const haciaColores6 = () => {
     
     window.location.href="../pages/selcolorniv3.html";
 }
-
 //-------------------------------------------------------
 
 //FUNCION PARA SELECCIONAR COLOR Y ASIGNAR
