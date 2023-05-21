@@ -97,43 +97,14 @@ body {
     gap: 1em;
 }
 
-.mm-ocultos{
-    display: none;
+input[type="color"] {
+    width: 2em;
+    height: 2em;
+    border: solid 0.2em black;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
 }
 
-/* fila de colores a elegir de todos los niveles */
-
-#colnivel1pos1selec, #colnivel2pos1selec, #colnivel3pos1selec{
-    background-color: rgb(29, 49, 230);
-}
-
-#colnivel1pos2selec, #colnivel2pos2selec, #colnivel3pos2selec{
-    background-color: rgb(211, 32, 32);
-}
-
-#colnivel1pos3selec, #colnivel2pos3selec, #colnivel3pos3selec{
-    background-color: rgb(125, 226, 25);
-}
-
-#colnivel1pos4selec, #colnivel2pos4selec, #colnivel3pos4selec{
-    background-color: rgb(245, 72, 9);
-}
-
-#colnivel1pos5selec, #colnivel2pos5selec, #colnivel3pos5selec{
-    background-color: rgb(27, 228, 228);
-}
-
-#colnivel1pos6selec, #colnivel2pos6selec, #colnivel3pos6selec{
-    background-color: rgb(245, 210, 9);
-}
-
-#colnivel2pos7selec, #colnivel3pos7selec{
-    background-color: rgb(196, 43, 145);
-}
-
-#colnivel3pos8selec{
-    background-color: rgb(26, 156, 165);
-}
 /* -------------------------------------------------------------------------------- */
 
 /* PAGINA FIN DE PARTIDA */
