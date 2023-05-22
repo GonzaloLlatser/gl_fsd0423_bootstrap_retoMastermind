@@ -3,24 +3,22 @@
 // Pagina de seleecion de nivel- hacia pagina de seleccion de colores dependiendo la seleccion previa.
 
 
-//funcion de nivel: inicial y 4 colores
-const haciaColores4 = ( ) => {
-    window.location.href="../pages/selcolorniv1.html";
+//FUNCION QUE DE ACUERDO AL NIVEL DIRIGE A LA PAGINA DE SELECCION DE COLOR ACORDE
+
+const haciaColores = (id) => {
+
+   
+    if (id === "principiante"){
+        window.location.href = "../pages/selcolorniv1.html";
+    }
+    else if (id === "intermedio"){
+        window.location.href = "../pages/selcolorniv2.html";
+    }
+    else{
+        window.location.href = "../pages/selcolorniv3.html";
+    }
 }
 
-
-// funcion de nivel: intermedia y 5 colores
-const haciaColores5 = () => {
-    
-    window.location.href="../pages/selcolorniv2.html";
-}
-
-
-// funcion de nivel: avanzado y 6 colores
-const haciaColores6 = () => {
-    
-    window.location.href="../pages/selcolorniv3.html";
-}
 //-------------------------------------------------------
 
 //FUNCION PARA SELECCIONAR COLOR Y ASIGNAR
