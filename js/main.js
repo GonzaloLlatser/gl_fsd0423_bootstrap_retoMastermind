@@ -29,7 +29,7 @@ const haciaColores6 = () => {
 
 // existen dos parametros (inputId y CircleId), 
 // recogen el valor del ID color. 
-//Se declaran entonces las variables (colorInput y circle).
+//Se declaran entonces las variables (colorInput y circle) Estos parámetros se utilizan para identificar los elementos HTML en los que se va a trabajar.Estos parámetros se utilizan para identificar los elementos HTML en los que se va a trabajar..
 
 function colorPicker(inputId, circleId, colorsArray) {
     let colorInput = document.getElementById(inputId);
