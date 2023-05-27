@@ -1,69 +1,55 @@
 
+//--------------------- FUNCIONA CORRECTAMENTE ------------------------------------------------//
 
-// Pagina de seleecion de nivel- hacia pagina de seleccion de colores dependiendo la seleccion previa.
 
+// FUNCION COLOR PICKER 
 
-//FUNCION QUE DE ACUERDO AL NIVEL DIRIGE A LA PAGINA DE SELECCION DE COLOR ACORDE
+//ELECCION DE COLOR EN PAGINA COLORRES
 
-const haciaColores = (id) => {
+//paso argumentos que seran ID.
+let myColorArray = [];
 
-   
-    if (id === "principiante"){
-        window.location.href = "../pages/selcolorniv1.html";
-    }
-    else if (id === "intermedio"){
-        window.location.href = "../pages/selcolorniv2.html";
-    }
-    else{
-        window.location.href = "../pages/selcolorniv3.html";
-    }
+const colorpicker = (x, y) => {
+
+  let colorPicker = document.getElementById(x);
+  let colorBola = document.getElementById(y);
+
+  colorPicker.addEventListener("change", () => {
+    //utilizo un elemento intermedio para almacenar el color, llamado selectColor. Almacena el color seleccionado por el usuario en la variable selectColor a partir del valor del elemento colorPicker.
+    // Establece el color de fondo del elemento colorBola (asociado a y) utilizando selectColor.
+    // Agrega el color seleccionado (colorPicker.value) al array myColorArray.
+    // Imprime myColorArray en la consola.
+
+    let selectColor = colorPicker.value;
+    colorBola.style.backgroundColor = selectColor
+
+    myColorArray.push(colorPicker.value);
+    console.log(myColorArray);
+  });
 }
 
-//-------------------------------------------------------
+// hacer esta misma funcion para cada elemento en cada pagina de sel. de colores
+colorpicker("cp1", "circle1");
+colorpicker("cp2", "circle2");
+colorpicker("cp3", "circle3");
+colorpicker("cp4", "circle4");
+colorpicker("cp5", "circle5");
+colorpicker("cp6", "circle6");
+//reconoce cada color de los elegidos.
+//(x, y)
 
-//FUNCION PARA SELECCIONAR COLOR Y ASIGNAR
+//--------------------- FUNCIONA CORRECTAMENTE ------------------------------------------------//
 
-//COLORPICKER
 
-// existen dos parametros (inputId y CircleId), 
-// recogen el valor del ID color. 
-//Se declaran entonces las variables (colorInput y circle) Estos parámetros se utilizan para identificar los elementos HTML en los que se va a trabajar.Estos parámetros se utilizan para identificar los elementos HTML en los que se va a trabajar..
 
-function colorPicker(inputId, circleId, colorsArray) {
-    let colorInput = document.getElementById(inputId);
-    let circle = document.getElementById(circleId);
+//FUNCION QUE ALMACENE EL COLOR DEL PICKET EN SESSION STORAGE
 
-    colorInput.oninput = () => {
-        circle.style.backgroundColor = colorInput.value;
-        console.log("Color seleccionado:", colorInput.value);
+function haciaPartida() {
+  // Lógica de la función haciaPartida, cuando quiero convertir a funcion flecha no me deja.
+  console.log("HASTA ACA FUNCIONA");
 
-        //Convertir en Array los colores elegidos por el jugador, que luego sirven de comparacion.
-        colorsArray.push(colorInput.value);
-        console.log("Colores almacenados:", colorsArray);
+  sessionStorage.setItem("losColoresElegidos", JSON.stringify(myColorArray));
 
-        //Almacenaje colores del jugador en sessionStorage y convertidos en un string.
-        sessionStorage.setItem("almacenColores", JSON.stringify(colorsArray));
-        console.log("Colores almacenados en sessionStorage: ", colorsArray);
-    };
+  console.log(coloSelectUsu)
 }
-
-let seleccionColores = [];
-
-//Guardado y converversión del string a array de los colores almacenados en el sessionStorage
-// const storageColores = sessionStorage.getItem("almacenColores");
-//     if (storageColores) {
-//         almacenColores = JSON.parse(storageColores);
-//         console.log("Colores convertidos del sessionStorage:", almacenColores);
-//     }
-
-
-    
-// String y arrays de los colores hexadecimales
-colorPicker("cp1", "circle1", seleccionColores);
-colorPicker("cp2", "circle2", seleccionColores);
-colorPicker("cp3", "circle3", seleccionColores);
-colorPicker("cp4", "circle4", seleccionColores);
-colorPicker("cp5", "circle5", seleccionColores);
-colorPicker("cp6", "circle6", seleccionColores);
-
-//-------------------------------------------------------
+//--------------------- FUNCIONA CORRECTAMENTE ------------------------------------------------//
