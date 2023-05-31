@@ -51,3 +51,26 @@ const pintarColSelec = () => {
 }
 
 pintarColSelec();
+
+//FUNCION PARA SECUENCIA ALEATORIA DE 4 COLORES
+
+
+//defino los colores y parametros
+
+
+//genero la funcion
+const generarSecuenciaAleatoria = (array) => {
+    let secuencia= [];
+    
+//generar 4 colores aleatorios
+    for (let i = 0; i < 4; i++) {
+
+        let indiceAleatorio = Math.floor(Math.random() * array.length);
+        let coloresAleatorio= array[indiceAleatorio];
+        secuencia.push(coloresAleatorio);
+        
+    }
+    return secuencia;       
+}
+generarSecuenciaAleatoria(arraydeColores);
+console.log(generarSecuenciaAleatoria(arraydeColores));
