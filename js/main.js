@@ -1,10 +1,16 @@
 
-// funcion para ir a la url del juego
+//----------------------------------------------------------------------------------------//
+// FUNCION para ir a la url del juego
+
+
 const haciaPartida = () => {
   window.location.href = "./modtablero.html";
 }
 
-// funcion color picker
+//----------------------------------------------------------------------------------------//
+// FUNCION color picker
+
+
 let myColorArray = [];
 
 const colorpicker = (x, y) => {
@@ -30,7 +36,6 @@ const colorpicker = (x, y) => {
 
 }
 
-// hacer esta misma funcion para cada elemento en cada pagina de sel. de colores
 colorpicker("cp1", "circle1");
 colorpicker("cp2", "circle2");
 colorpicker("cp3", "circle3");
@@ -39,6 +44,9 @@ colorpicker("cp5", "circle5");
 colorpicker("cp6", "circle6");
 //reconoce cada color de los elegidos.
 //(x, y)
+
+
+//----------------------------------------------------------------------------------------//
 
 
 

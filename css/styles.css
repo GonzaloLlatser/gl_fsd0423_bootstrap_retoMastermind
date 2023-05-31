@@ -22,7 +22,7 @@ body {
 }
 
 .rowopciones {
-    height: 17em;
+    height: 5em;
 }
 
 .botonpropio {
@@ -118,31 +118,7 @@ input[type="color"] {
 
 /* -------------------------------------------------------------------------------- */
 
-/* PAGINA MODELO DE TABLERO*/
-
-.tablerodejuego{
-    height: 3.5em;
-    background-color: rgba(173, 182, 182, 0.137);
-}
-
-/* circulos y posiciones de juego */
-
-.circulo1, .circulo2, .circulo3, .circulo4{
-    height: 3em;
-    width: 3em;
-    background-color: rgba(0, 0, 255, 0);
-    border-radius: 50%;
-    border: 0.1em solid rgb(255, 255, 255);
-}
-
-/* circulos de aciertos */
-
-.acierto1, .acierto2, .acierto3, .acierto4{
-    height: 0.7em;
-    width: 0.7em;
-    border-radius: 50%;
-    border: 0.1em solid white;
-}
+/* PAGINA DE TABLERO*/
 
 /* circulos con los colores elegidos para jugar */
 
@@ -160,29 +136,41 @@ input[type="color"] {
     border-radius: 50%;
     border: 0.1em solid white;
     margin: 0.2em;
-    
 }
-/* -------------------------------------------------------------------------------- */
 
+/* circulos de la jugada*/
 
 .classRow{
-    height: 5em;
-    background-color: aqua;
-    margin: 1em;
-    width: 15em;
-    display: flex; 
+    height: 3em;
+    background-color: rgba(255, 255, 255, 0.13);
+    width: 11em;
+    display: flex;
 }
 
 
 .classColors{
-    height: 4em;
-    background-color: blueviolet;
-    width: 4em;
+    height: 2.5em;
+    width: 2.5em;
+    /* background-color: blueviolet; */
+    margin: 0.1em;
     border-radius: 50%;
-    
-
+    border: solid 0.1em rgb(255, 255, 255);
 }
 
+/* circulos de la comprobacion*/
+
+.classRowNew{
+    height: 3em;
+    background-color: rgb(197, 22, 22);
+    width: 11em;
+}
+
+
+
+
+
+
+/* -------------------------------------------------------------------------------- */
 
 
 
