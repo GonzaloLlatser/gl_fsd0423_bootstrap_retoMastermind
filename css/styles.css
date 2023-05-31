@@ -155,7 +155,12 @@ input[type="color"] {
 /* -------------------------------------------------------------------------------- */
 
 
-
+.classRow{
+    height: 5em;
+    background-color: aqua;
+    margin: 1em;
+    width: 15em;
+}
 
 
 
