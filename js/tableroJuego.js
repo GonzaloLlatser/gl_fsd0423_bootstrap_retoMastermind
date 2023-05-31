@@ -25,7 +25,7 @@ const createRows = (nivelValor) => {
         }
     }
 };
-createRows(10);
+
 
 
 /////////////////////////////////////////////////////////////////
@@ -74,3 +74,18 @@ const generarSecuenciaAleatoria = (array) => {
 }
 generarSecuenciaAleatoria(arraydeColores);
 console.log(generarSecuenciaAleatoria(arraydeColores));
+
+
+////// funcion para de acuerdo al nivel, se generen las filas del tablero
+
+arraydeColores. length
+
+if (arraydeColores.length === 4) {
+    createRows(10);
+  
+} else if (arraydeColores.length === 5) {
+    createRows (8);
+    
+} else {
+    createRows (6);
+}
