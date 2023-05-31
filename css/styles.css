@@ -153,6 +153,15 @@ input[type="color"] {
     border: 0.1em solid white;
     margin: 0.2em;
 }
+
+.coloresRandomX{
+    height: 2em;
+    width: 2em;
+    border-radius: 50%;
+    border: 0.1em solid white;
+    margin: 0.2em;
+    
+}
 /* -------------------------------------------------------------------------------- */
 
 
