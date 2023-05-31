@@ -41,7 +41,12 @@ console.log(arraydeColores);
 
 const pintarColSelec = () => {
 
-
+    for (let i = 0; i < 6; i++) {
+        // arrayBolasPintar[i];
+        // arraydeColores[i];
+        
+        arrayBolasPintar[i].style.backgroundColor = arraydeColores[i]
+    }
 
 }
 
