@@ -160,8 +160,18 @@ input[type="color"] {
     background-color: aqua;
     margin: 1em;
     width: 15em;
+    display: flex; 
 }
 
+
+.classColors{
+    height: 4em;
+    background-color: blueviolet;
+    width: 4em;
+    border-radius: 50%;
+    
+
+}
 
 
 
