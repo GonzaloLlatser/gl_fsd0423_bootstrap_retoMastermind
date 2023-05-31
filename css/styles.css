@@ -146,11 +146,12 @@ input[type="color"] {
 
 /* circulos con los colores elegidos para jugar */
 
-.colorsel1, .colorsel2, .colorsel3, .colorsel4, .colorsel5, .colorsel6{
+.coloresseleccionados{
     height: 2em;
     width: 2em;
     border-radius: 50%;
     border: 0.1em solid white;
+    margin: 0.2em;
 }
 /* -------------------------------------------------------------------------------- */
 

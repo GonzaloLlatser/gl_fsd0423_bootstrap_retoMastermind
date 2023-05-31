@@ -3,7 +3,7 @@
 // //TABLERO INTENTO
 
 const tableroContenedor = document.getElementById("tableropadre");
-console.log ("hola estoy aca");
+console.log("hola estoy aca");
 
 const createRows = (nivelValor) => {
 
@@ -11,23 +11,38 @@ const createRows = (nivelValor) => {
 
         let row = document.createElement("div");
         row.classList.add("classRow");
-      
-        console.log ("hola estoy aca");
-        tableroContenedor.appendChild(row);  
+
+        console.log("hola estoy aca");
+        tableroContenedor.appendChild(row);
 
         for (let i = 0; i < 4; i++) {
 
             let colors = document.createElement("div");
             colors.classList.add("classColors");
-          
-            console.log ("hola estoy aca");
-            row.appendChild(colors);  
+
+            console.log("hola estoy aca");
+            row.appendChild(colors);
         }
-
-
-
     }
 };
-createRows (10);
+createRows(10);
 
 
+/////////////////////////////////////////////////////////////////
+
+//pintar colores elegidos por el jugador
+
+
+let bolasPorPintar = document.getElementsByClassName("coloresseleccionados");
+let arrayBolasPintar = Array.from (bolasPorPintar);
+let arraydeColores = JSON.parse(sessionStorage.getItem ("losColoresElegidos"));
+
+console.log(arraydeColores);
+
+const pintarColSelec = () => {
+
+
+
+}
+
+pintarColSelec();
