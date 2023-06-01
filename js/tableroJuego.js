@@ -73,8 +73,10 @@ const createRows = (nivelValor) => {
 
 //FUNCION secuencia aleatoria de 4 colores
 
+let secuencia = [];
+
 const generarSecuenciaAleatoria = (array) => {
-    let secuencia = [];
+    
     //generar 4 colores aleatorios
     for (let i = 0; i < 4; i++) {
         let indiceAleatorio = Math.floor(Math.random() * array.length);
@@ -172,13 +174,71 @@ const guardarColores = () =>{
     })
 
     coloresElegidosFila.length = 4;
+
+    comparar();
 }
 
 
-console.log (" hola soy ", coloresElegidosFila);
+console.log (" hola soy colores elegidos", coloresElegidosFila);
+
+//----------------------------------------------------------------------------------------//
+
+// FUNCION DE COMPARAR COLORES CON RESPUESTA GANADORA
+
+let arrayCirculosComparacion = [];
+
+const comparar = () =>{
+
+    arrayCirculosComparacion = coloresElegidosFila.map((element, index) =>{
+
+        if (element === secuencia[index] ){
+            return "rgb(255, 0, 0)"
+        } else if (secuencia.includes(element)){
+            return "rgb(255, 255, 255)"
+        }else {
+            return "";
+        }
+
+    })
+ 
+    console.log (" hola soy colores circulos pequeños", arrayCirculosComparacion);
+    pintarCirculosPequenos();
+}
+
+
+//-----------------------------------------------------------------
+
+//pintar circulos pequeños
+
+
+let todosCirculosPequenos = document.getElementsByClassName("checkBalls");
+let arrayCirculoPequeno = Array.from(todosCirculosPequenos);
 
 
 
+const pintarCirculosPequenos = () => {
+
+    arrayCirculoPequeno.forEach((element, i) => {
+
+    // for (let i = 0; i < 4; i++) {
+        
+        // arrayCirculoPequeno[i].style.backgroundColor = arrayCirculosComparacion[i]
+        element.style.backgroundColor = arrayCirculosComparacion[i]
+    })
+    ganar();
+}
+
+const ganar = () =>{
+    for (let i = 0; i < 4; i++) {
+        
+        if (arrayCirculoPequeno[i].style.backgroundColor === "rgb(255, 0, 0)"){
+        
+        }
+
+    }
+    alert("has ganado")
+
+}
 
 
 

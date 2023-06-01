@@ -154,7 +154,7 @@ input[type="color"] {
     /* background-color: blueviolet; */
     margin: 0.1em;
     border-radius: 50%;
-    border: solid 0.1em rgb(255, 255, 255);
+    border: solid 0.1em white;
 }
 
 /* circulos de la comprobacion*/
@@ -168,7 +168,6 @@ input[type="color"] {
 .checkBalls {
     height: 1em;
     width: 1em;
-    /* background-color: blueviolet; */
     margin: 0.1em;
     border-radius: 50%;
     border: solid 0.1em rgb(255, 255, 255);
