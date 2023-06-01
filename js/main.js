@@ -26,14 +26,13 @@ const colorpicker = (x, y) => {
 
     // myColorArray.push(colorInput.value);
     console.log("colores seleccionados por el usuario", colorInput.value);
-    myColorArray.push(colorInput.value);
+    myColorArray.push(colorBola.style.backgroundColor);
     console.log(myColorArray);
     let savedColors = JSON.stringify(myColorArray);
     sessionStorage.setItem("losColoresElegidos", savedColors);
   });
   console.log("colores seleccionados por el usuario", colorInput.value);
-  console.log(myColorArray);
-
+ 
 }
 
 colorpicker("cp1", "circle1");

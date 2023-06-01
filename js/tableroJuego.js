@@ -1,62 +1,6 @@
 
 //----------------------------------------------------------------------------------------//
 
-// FUNCION Tablero de juego dinamico 
-
-const tableroContenedor = document.getElementById("tableropadre");
-
-const createRows = (nivelValor) => {
-
-    for (let i = 0; i < nivelValor; i++) {
-
-        let row = document.createElement("div");
-        row.classList.add("classRow");
-
-        tableroContenedor.appendChild(row);
-
-        for (let i = 0; i < 4; i++) {
-
-            let colors = document.createElement("div");
-            colors.classList.add("classColors");
-
-            row.appendChild(colors);
-        }
-    }
-};
-//----------------------------------------------------------------------------------------//
-// FUNCION Tablero de comprobacion ( no lograda )
-
-// const tableroComprobacion = document.getElementById("comprobaciontabla");
-
-
-// const createRowCheck =(nivelValor) =>{
-//     for (let i = 0; i < nivelValor; i++) {
-//         console.log("hola");
-        
-//         let rowNew =document.createElement ("div");
-//         rowNew.classList.add("classRowNew");
-
-//         tableroComprobacion.appendChild(rowNew);
-
-//         for (let i=0; i < 4; i++){
-//             let check = document.createElement("div");
-//             check.classList.add ("classChekList");
-
-//             rowNew.appendChild(check);
-
-//         }
-//     }
-// }
-
-
-
-
-
-
-
-
-//----------------------------------------------------------------------------------------//
-
 // FUNCION de SStorage de colores elegidos
 
 // Almacena en el sessionStorage los colores elegidos por el jugador y a su vez pinto estos 
@@ -82,6 +26,64 @@ pintarColSelec();
 
 
 //----------------------------------------------------------------------------------------//
+
+
+
+
+
+
+//-----------------------------------------------------------------------------------------//
+// let div = document.getElementsByClassName("classColors");
+
+
+// div.addEventListener('click', () => {
+
+//     let contador = 0; 
+
+//     div.style.backgroundColor = arraydeColores[contador];
+
+//     contador++
+
+// })
+
+
+
+//----------------------------------------------------------------------------------------//
+
+// FUNCION Tablero de juego dinamico 
+
+const tableroContenedor = document.getElementById("tableropadre");
+
+const createRows = (nivelValor) => {
+
+
+
+    for (let i = 0; i < nivelValor; i++) {
+
+        let row = document.createElement("div");
+        row.classList.add("classRow");
+        row.id = ("classRow"+i)
+        
+
+        tableroContenedor.appendChild(row);
+
+        for (let i = 0; i < 4; i++) {
+
+            let colors = document.createElement("div");
+            colors.classList.add("classColors");
+    
+            row.appendChild(colors);
+        }
+        for (let i = 0; i < 4; i++) {
+            let checkBalls = document.createElement("div");
+            checkBalls.classList.add("checkBalls");
+
+            row.appendChild(checkBalls);
+        }
+    }
+};
+//----------------------------------------------------------------------------------------//
+
 
 //FUNCION secuencia aleatoria de 4 colores
 
@@ -122,11 +124,14 @@ const pintarTableroSecreto = () => {
         // cuando el contador= 0, el indice del array de colores es = 0 y el indice de el elemento por pintar es = 0
         // asi el primer array pintara al segundo
         arrayBolasX[i].style.backgroundColor = arrayrandom[i];
-    }
+    } console.log ("")
 }
 pintarTableroSecreto();
 
 
+// pruebas
+
+const firstRowColors = document.querySelectorAll(".row:first-child ")
 //----------------------------------------------------------------------------------------//
 
 // FUNCION para de acuerdo al nivel, se generen las filas del tablero
@@ -145,11 +150,27 @@ if (arraydeColores.length === 4) {
 
 //----------------------------------------------------------------------------------------//
 
+// FUNCION para lograr pintar cada circulo, haciendo click y que no coja unicamente el ultimo valor.
 
+const classColorsElements = document.querySelectorAll('.classColors');
 
+classColorsElements.forEach((element, index) => {
+  let contador = 0; // Inicializamos el contador en 0
+  
+  element.addEventListener('click', () => {
+    const colorElegido = arraydeColores[contador];
+    element.style.backgroundColor = colorElegido;
+    
+    contador++; // Incrementamos el contador
+    
+    // Si llegamos al final de arraydeColores, volvemos al principio
+    if (contador === arraydeColores.length) {
+      contador = 0;
+    }
+  });
+});
 
-
-
+//----------------------------------------------------------------------------------------//
 
 
 
