@@ -1,15 +1,15 @@
 
 //----------------------------------------------------------------------------------------//
-// FUNCION para ir a la url del juego
 
+// FUNCION para ir a la url del juego
 
 const haciaPartida = () => {
   window.location.href = "./modtablero.html";
 }
 
 //----------------------------------------------------------------------------------------//
-// FUNCION color picker
 
+// FUNCION color picker
 
 let myColorArray = [];
 
@@ -32,7 +32,6 @@ const colorpicker = (x, y) => {
     sessionStorage.setItem("losColoresElegidos", savedColors);
   });
   console.log("colores seleccionados por el usuario", colorInput.value);
- 
 }
 
 colorpicker("cp1", "circle1");
@@ -43,7 +42,6 @@ colorpicker("cp5", "circle5");
 colorpicker("cp6", "circle6");
 //reconoce cada color de los elegidos.
 //(x, y)
-
 
 //----------------------------------------------------------------------------------------//
 

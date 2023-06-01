@@ -24,16 +24,6 @@ const pintarColSelec = () => {
 
 pintarColSelec();
 
-
-//----------------------------------------------------------------------------------------//
-
-
-
-
-
-
-//-----------------------------------------------------------------------------------------//
-
 //----------------------------------------------------------------------------------------//
 
 // FUNCION Tablero de juego dinamico 
@@ -42,14 +32,12 @@ const tableroContenedor = document.getElementById("tableropadre");
 
 const createRows = (nivelValor) => {
 
-
-
     for (let i = 0; i < nivelValor; i++) {
 
         let row = document.createElement("div");
         row.classList.add("classRow");
-        row.id = ("classRow"+i)
-        
+        row.id = ("classRow" + i)
+
 
         tableroContenedor.appendChild(row);
 
@@ -57,7 +45,7 @@ const createRows = (nivelValor) => {
 
             let colors = document.createElement("div");
             colors.classList.add("classColors");
-    
+
             row.appendChild(colors);
         }
         for (let i = 0; i < 4; i++) {
@@ -70,13 +58,12 @@ const createRows = (nivelValor) => {
 };
 //----------------------------------------------------------------------------------------//
 
-
 //FUNCION secuencia aleatoria de 4 colores
 
 let secuencia = [];
 
 const generarSecuenciaAleatoria = (array) => {
-    
+
     //generar 4 colores aleatorios
     for (let i = 0; i < 4; i++) {
         let indiceAleatorio = Math.floor(Math.random() * array.length);
@@ -87,10 +74,8 @@ const generarSecuenciaAleatoria = (array) => {
 }
 // ha acabado la funcion
 // invoco a la funcion, con un argumento que entra por el parentesis de la declaracion
-generarSecuenciaAleatoria(arraydeColores);
-
 // declaro variable
-
+generarSecuenciaAleatoria(arraydeColores);
 
 //----------------------------------------------------------------------------------------//
 
@@ -99,7 +84,7 @@ generarSecuenciaAleatoria(arraydeColores);
 // declaro variables que necesito para esta funcion
 //HTML COLLECTION
 
-let arrayBolasSecretas = document.getElementsByClassName("coloresRandomX"); 
+let arrayBolasSecretas = document.getElementsByClassName("coloresRandomX");
 
 // AQUI TENGO MIS ARRAYS:
 
@@ -112,14 +97,13 @@ const pintarTableroSecreto = () => {
         // cuando el contador= 0, el indice del array de colores es = 0 y el indice de el elemento por pintar es = 0
         // asi el primer array pintara al segundo
         arrayBolasX[i].style.backgroundColor = arrayrandom[i];
-    } console.log ("")
+    } console.log("")
 }
 pintarTableroSecreto();
-
-
 // pruebas
 
 const firstRowColors = document.querySelectorAll(".row:first-child ")
+
 //----------------------------------------------------------------------------------------//
 
 // FUNCION para de acuerdo al nivel, se generen las filas del tablero
@@ -143,31 +127,32 @@ if (arraydeColores.length === 4) {
 const classColorsElements = document.querySelectorAll('.classColors');
 
 classColorsElements.forEach((element) => {
-  let contador = 0; // Inicializamos el contador en 0
-  
-  element.addEventListener('click', () => {
-    const colorElegido = arraydeColores[contador];
-    element.style.backgroundColor = colorElegido;
+    // Inicializamos el contador en 0
+    let contador = 0;
 
-    
-    contador++; // Incrementamos el contador
-    
-    // Si llegamos al final de arraydeColores, volvemos al principio
-    if (contador === arraydeColores.length) {
-      contador = 0;
-    }
-  });
+    element.addEventListener('click', () => {
+        const colorElegido = arraydeColores[contador];
+        element.style.backgroundColor = colorElegido;
+
+        // Incrementamos el contador
+        contador++;
+
+        // Si llegamos al final de arraydeColores, volvemos al principio
+        if (contador === arraydeColores.length) {
+            contador = 0;
+        }
+    });
 });
 
 //----------------------------------------------------------------------------------------//
 
-// funcion para guardar colores elegidos al jugar
+// FUNCION para guardar colores elegidos al jugar
 
 
 let coloresElegidosFila = [];
 
-const guardarColores = () =>{
-    
+const guardarColores = () => {
+
     classColorsElements.forEach((element, index) => {
 
         coloresElegidosFila[index] = element.style.backgroundColor
@@ -178,8 +163,7 @@ const guardarColores = () =>{
     comparar();
 }
 
-
-console.log (" hola soy colores elegidos", coloresElegidosFila);
+console.log(" hola soy colores elegidos", coloresElegidosFila);
 
 //----------------------------------------------------------------------------------------//
 
@@ -187,52 +171,50 @@ console.log (" hola soy colores elegidos", coloresElegidosFila);
 
 let arrayCirculosComparacion = [];
 
-const comparar = () =>{
+const comparar = () => {
 
-    arrayCirculosComparacion = coloresElegidosFila.map((element, index) =>{
+    arrayCirculosComparacion = coloresElegidosFila.map((element, index) => {
 
-        if (element === secuencia[index] ){
+        if (element === secuencia[index]) {
             return "rgb(255, 0, 0)"
-        } else if (secuencia.includes(element)){
+        } else if (secuencia.includes(element)) {
             return "rgb(255, 255, 255)"
-        }else {
+        } else {
             return "";
         }
 
     })
- 
-    console.log (" hola soy colores circulos pequeños", arrayCirculosComparacion);
+
+    console.log(" hola soy colores circulos pequeños", arrayCirculosComparacion);
+
     pintarCirculosPequenos();
 }
 
+//----------------------------------------------------------------------------------------//
 
-//-----------------------------------------------------------------
-
-//pintar circulos pequeños
-
+// FUNCION pintar circulos pequeños
 
 let todosCirculosPequenos = document.getElementsByClassName("checkBalls");
 let arrayCirculoPequeno = Array.from(todosCirculosPequenos);
-
 
 
 const pintarCirculosPequenos = () => {
 
     arrayCirculoPequeno.forEach((element, i) => {
 
-    // for (let i = 0; i < 4; i++) {
-        
+        // for (let i = 0; i < 4; i++) {
+
         // arrayCirculoPequeno[i].style.backgroundColor = arrayCirculosComparacion[i]
         element.style.backgroundColor = arrayCirculosComparacion[i]
     })
     ganar();
 }
 
-const ganar = () =>{
+const ganar = () => {
     for (let i = 0; i < 4; i++) {
-        
-        if (arrayCirculoPequeno[i].style.backgroundColor === "rgb(255, 0, 0)"){
-        
+
+        if (arrayCirculoPequeno[i].style.backgroundColor === "rgb(255, 0, 0)") {
+
         }
 
     }

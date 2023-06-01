@@ -82,10 +82,6 @@ body {
 
 /* -------------------------------------------------------------------------------- */
 
-/* PAGINA NIVELES */
-
-/* -------------------------------------------------------------------------------- */
-
 /* PAGINA COLORES */
 
 .cajacolor{
@@ -142,27 +138,24 @@ input[type="color"] {
 
 .classRow{
     height: 3em;
-    background-color: rgba(255, 255, 255, 0.13);
-    width: 11em;
+    background-color: rgba(255, 255, 255, 0.048);
+    width: 15em;
     display: flex;
 }
-
 
 .classColors{
     height: 2.5em;
     width: 2.5em;
-    /* background-color: blueviolet; */
     margin: 0.1em;
     border-radius: 50%;
     border: solid 0.1em white;
 }
 
-/* circulos de la comprobacion*/
-
-.classRowNew{
-    height: 3em;
-    background-color: rgb(197, 22, 22);
-    width: 11em;
+.classRow{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
 }
 
 .checkBalls {
@@ -173,11 +166,9 @@ input[type="color"] {
     border: solid 0.1em rgb(255, 255, 255);
 }
 
-
-
-
-
-
+/* .coloresRandomX{
+    display: none;
+} */
 /* -------------------------------------------------------------------------------- */
 
 
