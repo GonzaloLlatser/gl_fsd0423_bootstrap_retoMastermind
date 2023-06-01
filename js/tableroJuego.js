@@ -33,20 +33,6 @@ pintarColSelec();
 
 
 //-----------------------------------------------------------------------------------------//
-// let div = document.getElementsByClassName("classColors");
-
-
-// div.addEventListener('click', () => {
-
-//     let contador = 0; 
-
-//     div.style.backgroundColor = arraydeColores[contador];
-
-//     contador++
-
-// })
-
-
 
 //----------------------------------------------------------------------------------------//
 
@@ -154,12 +140,13 @@ if (arraydeColores.length === 4) {
 
 const classColorsElements = document.querySelectorAll('.classColors');
 
-classColorsElements.forEach((element, index) => {
+classColorsElements.forEach((element) => {
   let contador = 0; // Inicializamos el contador en 0
   
   element.addEventListener('click', () => {
     const colorElegido = arraydeColores[contador];
     element.style.backgroundColor = colorElegido;
+
     
     contador++; // Incrementamos el contador
     
@@ -172,6 +159,23 @@ classColorsElements.forEach((element, index) => {
 
 //----------------------------------------------------------------------------------------//
 
+// funcion para guardar colores elegidos al jugar
+
+
+let coloresElegidosFila = [];
+
+const guardarColores = () =>{
+    
+    classColorsElements.forEach((element, index) => {
+
+        coloresElegidosFila[index] = element.style.backgroundColor
+    })
+
+    coloresElegidosFila.length = 4;
+}
+
+
+console.log (" hola soy ", coloresElegidosFila);
 
 
 
@@ -186,25 +190,3 @@ classColorsElements.forEach((element, index) => {
 
 
 
-
-
-
-
-
-
-
-
-
-//funcion para obtener desde la anterior funcion los colores en rgb
-
-// arraybolassecretas
-
-// const hexToRgb = () => {
-//     rgbValues = arrayBolasX.map((e), ()=> {
-//         let newValue = e.style.backgroundColor;
-//         return newValue;
-//     })
-//     console.log (rgbValues);
-//     console.log (newValue);
-// }
-// 
