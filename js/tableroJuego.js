@@ -180,7 +180,7 @@ const comparar = () => {
         } else if (secuencia.includes(element)) {
             return "rgb(255, 255, 255)"
         } else {
-            return "";
+            return "transparent";
         }
 
     })
@@ -209,18 +209,24 @@ const pintarCirculosPequenos = () => {
     })
     ganar();
 }
+//----------------------------------------------------------------------------------------//
+// FUNCION GANAR, cuando las checkBals sean todas de un mismo color (rojo) la partida acabo.
+
 
 const ganar = () => {
+    let todosPintados = true;
     for (let i = 0; i < 4; i++) {
-
-        if (arrayCirculoPequeno[i].style.backgroundColor === "rgb(255, 0, 0)") {
-
+        if (arrayCirculoPequeno[i].style.backgroundColor !== "rgb(255, 0, 0)") {
+            todosPintados = false;
+            break;
         }
-
     }
-    alert("has ganado")
-
+    if (todosPintados) {
+        alert("¡Has ganado!");
+    }
 }
+
+
 
 
 
