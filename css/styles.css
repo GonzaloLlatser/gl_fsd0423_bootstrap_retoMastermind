@@ -84,11 +84,11 @@ body {
 
 /* PAGINA COLORES */
 
-.cajacolor{
+.cajacolor {
     height: 3.5em;
 }
 
-.rowcoloresselector{
+.rowcoloresselector {
     display: flex;
     gap: 1em;
 }
@@ -105,10 +105,12 @@ input[type="color"] {
 
 /* PAGINA FIN DE PARTIDA */
 
-.imgjugador{
-    height: 3em; width: 3em;
+.imgjugador {
+    height: 3em;
+    width: 3em;
 }
-.textjugadorfinal{
+
+.textjugadorfinal {
     color: aliceblue;
 }
 
@@ -118,7 +120,11 @@ input[type="color"] {
 
 /* circulos con los colores elegidos para jugar */
 
-.coloresseleccionados{
+.rowBlock {
+    pointer-events: none;
+}
+
+.coloresseleccionados {
     height: 2em;
     width: 2em;
     border-radius: 50%;
@@ -126,7 +132,7 @@ input[type="color"] {
     margin: 0.2em;
 }
 
-.coloresRandomX{
+.coloresRandomX {
     height: 2em;
     width: 2em;
     border-radius: 50%;
@@ -136,14 +142,14 @@ input[type="color"] {
 
 /* circulos de la jugada*/
 
-.classRow{
+.classRow {
     height: 3em;
     background-color: rgba(255, 255, 255, 0.048);
     width: 15em;
     display: flex;
 }
 
-.classColors{
+.classColors {
     height: 2.5em;
     width: 2.5em;
     margin: 0.1em;
@@ -151,11 +157,11 @@ input[type="color"] {
     border: solid 0.1em white;
 }
 
-.classRow{
+.classRow {
     display: flex;
     align-items: center;
     justify-content: center;
-    
+
 }
 
 .checkBalls {
@@ -170,6 +176,3 @@ input[type="color"] {
     display: none;
 } */
 /* -------------------------------------------------------------------------------- */
-
-
-

@@ -1,16 +1,14 @@
 
 //----------------------------------------------------------------------------------------//
 
-// FUNCION de SStorage de colores elegidos
-
-// Almacena en el sessionStorage los colores elegidos por el jugador y a su vez pinto estos 
-//colores en la pantalla del tablero.
-
+// COGEMOS LOS VALORES DE LA SESSION STORAGE.
 
 let bolasPorPintar = document.getElementsByClassName("coloresseleccionados");
 let arrayBolasPintar = Array.from(bolasPorPintar);
 let arraydeColores = JSON.parse(sessionStorage.getItem("losColoresElegidos"));
 
+
+console.log(arraydeColores);
 console.log(arraydeColores);
 
 const pintarColSelec = () => {
@@ -36,6 +34,7 @@ const createRows = (nivelValor) => {
 
         let row = document.createElement("div");
         row.classList.add("classRow");
+        row.classList.add("rowBlock");
         row.id = ("classRow" + i)
 
 
@@ -79,7 +78,7 @@ generarSecuenciaAleatoria(arraydeColores);
 
 //----------------------------------------------------------------------------------------//
 
-//FUNCION para que se muestren los colores random en fromato rgb 
+//FUNCION COLORES SECRETOS EN PANTALLA
 
 // declaro variables que necesito para esta funcion
 //HTML COLLECTION
@@ -106,7 +105,7 @@ const firstRowColors = document.querySelectorAll(".row:first-child ")
 
 //----------------------------------------------------------------------------------------//
 
-// FUNCION para de acuerdo al nivel, se generen las filas del tablero
+// FUNCION GENERACION DE TABLERO (FILAS POR NIVEL)
 
 arraydeColores.length
 
@@ -126,27 +125,29 @@ if (arraydeColores.length === 4) {
 
 const classColorsElements = document.querySelectorAll('.classColors');
 
-classColorsElements.forEach((element) => {
-    // Inicializamos el contador en 0
-    let contador = 0;
+const SelectorJugador = () => {
 
-    element.addEventListener('click', () => {
-        const colorElegido = arraydeColores[contador];
-        element.style.backgroundColor = colorElegido;
+    classColorsElements.forEach((element) => {
+        // Inicializamos el contador en 0
+        let contador = 0;
 
-        // Incrementamos el contador
-        contador++;
+        element.addEventListener('click', () => {
+            const colorElegido = arraydeColores[contador];
+            element.style.backgroundColor = colorElegido;
 
-        // Si llegamos al final de arraydeColores, volvemos al principio
-        if (contador === arraydeColores.length) {
-            contador = 0;
-        }
+            // Incrementamos el contador
+            contador++;
+
+            // Si llegamos al final de arraydeColores, volvemos al principio
+            if (contador === arraydeColores.length) {
+                contador = 0;
+            }
+        });
     });
-});
-
+}
 //----------------------------------------------------------------------------------------//
 
-// FUNCION para guardar colores elegidos al jugar
+// FUNCION PARA GUARDAR COLORES ELEGIDOS PARA JUGAR
 
 
 let coloresElegidosFila = [];
@@ -192,7 +193,7 @@ const comparar = () => {
 
 //----------------------------------------------------------------------------------------//
 
-// FUNCION pintar circulos pequeños
+// FUNCION PINTAR CIRCULOS PEQUEÑOS
 
 let todosCirculosPequenos = document.getElementsByClassName("checkBalls");
 let arrayCirculoPequeno = Array.from(todosCirculosPequenos);
@@ -226,15 +227,6 @@ const ganar = () => {
     }
 }
 
-
-
-
-
-
-
-
-
-
-
+//----------------------------------------------------------------------------------------//
 
 

@@ -1,49 +1,46 @@
 
-//----------------------------------------------------------------------------------------//
+const dificultadSeleccionada = sessionStorage.getItem("Dificultad elegida")
+let coloresSel = 4;
+let savedColors = ["undefined", "undefined", "undefined", "undefined"];
+
+
+
+
 
 // FUNCION para ir a la url del juego
-
-const haciaPartida = () => {
+const haciaPartida = (savedColors) => {
+  sessionStorage.setItem("losColoresElegidos", savedColors);
   window.location.href = "./modtablero.html";
 }
 
-//----------------------------------------------------------------------------------------//
+// 
+// // FUNCION color picker
+// let myColorArray = []
 
-// FUNCION color picker
+// const colorpicker = (x, y) => {
 
-let myColorArray = [];
+//   let colorInput = document.getElementById(x);
+//   let colorBola = document.getElementById(y);
 
-const colorpicker = (x, y) => {
+//   // colorInput.addEventListener("change", () => {
+//   colorInput.addEventListener("change", () => {
 
-  let colorInput = document.getElementById(x);
-  let colorBola = document.getElementById(y);
+//     // let selectColor = colorPicker.value;
+//     colorBola.style.backgroundColor = colorInput.value
+//   });
+//     // myColorArray.push(colorInput.value);
+//     myColorArray.push(colorBola.style.backgroundColor);
+//     savedColors = JSON.stringify(myColorArray);
 
-  // colorInput.addEventListener("change", () => {
-  colorInput.addEventListener("change", () => {
+// }
 
-    // let selectColor = colorPicker.value;
-    colorBola.style.backgroundColor = colorInput.value
+// colorpicker("cp1", "circle1");
+// colorpicker("cp2", "circle2");
+// colorpicker("cp3", "circle3");
+// colorpicker("cp4", "circle4");
+// colorpicker("cp5", "circle5");
+// colorpicker("cp6", "circle6");
 
-    // myColorArray.push(colorInput.value);
-    console.log("colores seleccionados por el usuario", colorInput.value);
-    myColorArray.push(colorBola.style.backgroundColor);
-    console.log(myColorArray);
-    let savedColors = JSON.stringify(myColorArray);
-    sessionStorage.setItem("losColoresElegidos", savedColors);
-  });
-  console.log("colores seleccionados por el usuario", colorInput.value);
-}
-
-colorpicker("cp1", "circle1");
-colorpicker("cp2", "circle2");
-colorpicker("cp3", "circle3");
-colorpicker("cp4", "circle4");
-colorpicker("cp5", "circle5");
-colorpicker("cp6", "circle6");
-//reconoce cada color de los elegidos.
-//(x, y)
-
-//----------------------------------------------------------------------------------------//
 
 
 
