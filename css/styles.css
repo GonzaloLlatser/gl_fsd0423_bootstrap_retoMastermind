@@ -124,6 +124,10 @@ input[type="color"] {
     pointer-events: none;
 }
 
+.filaActiva {
+    pointer-events: all;
+}
+
 .coloresseleccionados {
     height: 2em;
     width: 2em;

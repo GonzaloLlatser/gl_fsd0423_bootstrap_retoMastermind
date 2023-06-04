@@ -1,4 +1,3 @@
-
 //----------------------------------------------------------------------------------------//
 
 // COGEMOS LOS VALORES DE LA SESSION STORAGE.
@@ -6,7 +5,8 @@
 let bolasPorPintar = document.getElementsByClassName("coloresseleccionados");
 let arrayBolasPintar = Array.from(bolasPorPintar);
 let arraydeColores = JSON.parse(sessionStorage.getItem("losColoresElegidos"));
-
+let arrayCirculoPequeno;
+let todosCirculosPequenos;
 
 console.log(arraydeColores);
 console.log(arraydeColores);
@@ -14,8 +14,7 @@ console.log(arraydeColores);
 const pintarColSelec = () => {
 
     for (let i = 0; i < 6; i++) {
-        // arrayBolasPintar[i];
-        // arraydeColores[i];
+
         arrayBolasPintar[i].style.backgroundColor = arraydeColores[i]
     }
 }
@@ -40,14 +39,14 @@ const createRows = (nivelValor) => {
 
         tableroContenedor.appendChild(row);
 
-        for (let i = 0; i < 4; i++) {
+        for (let j = 0; j < 4; j++) {
 
             let colors = document.createElement("div");
             colors.classList.add("classColors");
 
             row.appendChild(colors);
         }
-        for (let i = 0; i < 4; i++) {
+        for (let h = 0; h < 4; h++) {
             let checkBalls = document.createElement("div");
             checkBalls.classList.add("checkBalls");
 
@@ -123,10 +122,31 @@ if (arraydeColores.length === 4) {
 
 // FUNCION para lograr pintar cada circulo, haciendo click y que no coja unicamente el ultimo valor.
 
-const classColorsElements = document.querySelectorAll('.classColors');
 
-const SelectorJugador = () => {
+// const SelectorJugador = (filaActiva) => {
+//     classColorsElements = filaActiva.querySelectorAll('.classColors');
+//     classColorsElements.forEach((element) => {
+//         // Inicializamos el contador en 0
+//         let contador = 0;
 
+//         element.addEventListener('click', () => {
+//             const colorElegido = arraydeColores[contador];
+//             element.style.backgroundColor = colorElegido;
+
+//             // Incrementamos el contador
+//             contador++;
+
+//             // Si llegamos al final de arraydeColores, volvemos al principio
+//             if (contador === arraydeColores.length) {
+//                 contador = 0;
+//             }
+//         });
+//     });
+// }
+
+
+const SelectorJugador = (filaActiva) => {
+    let classColorsElements = filaActiva.querySelectorAll('.classColors');
     classColorsElements.forEach((element) => {
         // Inicializamos el contador en 0
         let contador = 0;
@@ -134,43 +154,45 @@ const SelectorJugador = () => {
         element.addEventListener('click', () => {
             const colorElegido = arraydeColores[contador];
             element.style.backgroundColor = colorElegido;
-
             // Incrementamos el contador
             contador++;
-
             // Si llegamos al final de arraydeColores, volvemos al principio
             if (contador === arraydeColores.length) {
                 contador = 0;
             }
         });
     });
+    guardarColores();
 }
+
 //----------------------------------------------------------------------------------------//
 
 // FUNCION PARA GUARDAR COLORES ELEGIDOS PARA JUGAR
 
 
+
 let coloresElegidosFila = [];
 
 const guardarColores = () => {
-
+    coloresElegidosFila = ["undefined", "undefined", "undefined", "undefined"]
+    const classColorsElements = document.querySelectorAll('.classColors');
     classColorsElements.forEach((element, index) => {
 
         coloresElegidosFila[index] = element.style.backgroundColor
     })
 
     coloresElegidosFila.length = 4;
-
-    comparar();
+    console.log("estos son los colores elegidos para la primera fila ", coloresElegidosFila)
 }
 
-console.log(" hola soy colores elegidos", coloresElegidosFila);
 
 //----------------------------------------------------------------------------------------//
 
 // FUNCION DE COMPARAR COLORES CON RESPUESTA GANADORA
+let arrayCirculosComparacion
+todosCirculosPequenos = document.getElementsByClassName("checkBalls");
+arrayCirculoPequeno = Array.from(todosCirculosPequenos);
 
-let arrayCirculosComparacion = [];
 
 const comparar = () => {
 
@@ -188,31 +210,18 @@ const comparar = () => {
 
     console.log(" hola soy colores circulos pequeños", arrayCirculosComparacion);
 
-    pintarCirculosPequenos();
+    arrayCirculoPequeno.forEach((element, i) => {
+
+        element.style.backgroundColor = arrayCirculosComparacion[i]
+    })
 }
 
 //----------------------------------------------------------------------------------------//
 
 // FUNCION PINTAR CIRCULOS PEQUEÑOS
 
-let todosCirculosPequenos = document.getElementsByClassName("checkBalls");
-let arrayCirculoPequeno = Array.from(todosCirculosPequenos);
-
-
-const pintarCirculosPequenos = () => {
-
-    arrayCirculoPequeno.forEach((element, i) => {
-
-        // for (let i = 0; i < 4; i++) {
-
-        // arrayCirculoPequeno[i].style.backgroundColor = arrayCirculosComparacion[i]
-        element.style.backgroundColor = arrayCirculosComparacion[i]
-    })
-    ganar();
-}
 //----------------------------------------------------------------------------------------//
 // FUNCION GANAR, cuando las checkBals sean todas de un mismo color (rojo) la partida acabo.
-
 
 const ganar = () => {
     let todosPintados = true;
@@ -226,6 +235,45 @@ const ganar = () => {
         alert("¡Has ganado!");
     }
 }
+
+//----------------------------------------------------------------------------------------//
+let arrayFilas = Array.from(document.querySelectorAll('.classRow')).reverse();
+console.log("esto es el array de las filas ", arrayFilas)
+let filaContador = 0;
+let checkButton = document.getElementById("btnabout")
+let filaActiva;
+
+const iteracion = () => {
+    coloresElegidosFila = []
+    console.log("esto es el array de las filas ", arrayFilas.length)
+    filaActiva = document.getElementById(`classRow${filaContador}`);
+    filaActiva.classList.add("filaActiva");
+    SelectorJugador(filaActiva)
+    guardarColores()
+}
+
+iteracion();
+
+checkButton.addEventListener('click', () => {
+    guardarColores()
+    if (!coloresElegidosFila[0] || !coloresElegidosFila[1] || !coloresElegidosFila[2] || !coloresElegidosFila[3]) {
+        return;
+    } else {
+        if (filaContador < arrayFilas.length - 1) {
+            console.log("Esto es el contador de filas ", filaContador)
+            filaActiva.classList.remove("filaActiva");
+            let filaSiguiente = document.getElementById(`classRow${filaContador + 1}`);
+            filaSiguiente.classList.add("filaActiva");
+
+            comparar(filaActiva, coloresElegidosFila);
+            filaContador++;
+            iteracion();
+        } else {
+            alert("Has perdido");
+        }
+    }
+
+})
 
 //----------------------------------------------------------------------------------------//
 
